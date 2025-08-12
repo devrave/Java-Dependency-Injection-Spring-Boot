@@ -12,11 +12,12 @@ public class ProductService {
   private ProductRepository repository = new ProductRepository();
 
 
-  public List<Product> findAl(){
+  public List<Product> findAll(){
     return repository.findAll().stream().map(p->{
-      Double priceImp = p.getPrice() * 1.25d;
-      p.setPrice(priceImp.longValue());
-      return p;
+      Double priceImp = p.getPrice() * 1.25;
+      Product newProduct = new Product(p.getId(),p.getName(),priceImp.longValue());
+      
+      return newProduct;
     }).collect(Collectors.toList()); // Toca volver a convertirlo en una lista, porque map devuelme un stream y el metodo devuelve una List
     
   }
