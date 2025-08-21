@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.andres.springboot.di.app.springboot_di.models.Product;
-import com.andres.springboot.di.app.springboot_di.services.ProductServiceImpl;
+import com.andres.springboot.di.app.springboot_di.services.ProductService;
+
 
 @RestController
 @RequestMapping(path = "/api")
 public class SomeController { //Nota: el controlador el singleton, es una unica instancia compartida por todos
 
   @Autowired
-  private ProductServiceImpl service;
+  private ProductService service;
   @GetMapping
   public List<Product> list(){
     return service.findAll();
