@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.andres.springboot.di.app.springboot_di.models.Product;
-@Primary
-@Repository
+
+@Repository("productFoo")
 public class productRepositoryFoo implements ProductRepository {
 
   @Override

@@ -4,13 +4,13 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
-
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.andres.springboot.di.app.springboot_di.models.Product;
 
-
-@Repository //La anotación @Repository le indica a Spring que la clase es un componente de acceso a datos (un repositorio).
+@Primary
+@Repository("producList") //La anotación @Repository le indica a Spring que la clase es un componente de acceso a datos (un repositorio).
 public class ProductRepositoryImpl implements ProductRepository{
 
    private List<Product> data;
