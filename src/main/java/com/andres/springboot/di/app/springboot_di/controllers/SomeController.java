@@ -17,6 +17,7 @@ public class SomeController { //Nota: el controlador el singleton, es una unica 
 
   @Autowired
   private ProductService service;
+  
   @GetMapping
   public List<Product> list(){
     return service.findAll();
